@@ -122,6 +122,7 @@ export default function NavBar() {
           <Link to="/gallery" className="hover:text-accent transition-colors">Gallery</Link>
           <Link to="/blog" className="hover:text-accent transition-colors">Blog</Link>
           <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
+          <Link to="/container-truck-registration" className="hover:text-accent transition-colors font-semibold text-accent">Container Truck Registration</Link>
         </nav>
 
         {/* Medium Nav (Tablet/Laptop) */}
@@ -176,6 +177,7 @@ export default function NavBar() {
           </div>
           
           <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
+          <Link to="/container-truck-registration" className="hover:text-accent transition-colors font-semibold text-accent">Container Truck Registration</Link>
         </nav>
 
         {/* CTA & Mobile Toggle */}
@@ -313,6 +315,7 @@ export default function NavBar() {
               </div>
 
               <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="py-3 px-4 hover:text-accent hover:bg-slate-50 transition-colors shrink-0 rounded-full">Contact</Link>
+              <Link to="/container-truck-registration" onClick={() => setMobileMenuOpen(false)} className="py-3 px-4 text-accent font-bold hover:bg-slate-50 transition-colors shrink-0 rounded-full">Container Truck Registration</Link>
               
               <div className="pt-4 pb-2 px-2 shrink-0">
                 <a 

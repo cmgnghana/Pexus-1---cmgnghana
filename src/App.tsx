@@ -22,6 +22,7 @@ import Fleet from './pages/Fleet';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
+import ContainerTruckRegistration from './pages/TruckRegistration';
 import Search from './pages/Search';
 import Faqs from './pages/Faqs';
 import Gallery from './pages/Gallery';
@@ -597,6 +598,7 @@ export default function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/container-truck-registration" element={<ContainerTruckRegistration />} />
             <Route path="/search" element={<Search />} />
             <Route path="/faqs" element={<Faqs />} />
             <Route path="/gallery" element={<Gallery />} />

@@ -12,6 +12,7 @@ export interface SitemapCategory {
 }
 
 export const MAIN_PAGES: SitemapLink[] = [
+  { label: 'Container Truck Registration', path: '/container-truck-registration' },
   { label: 'Home Page', path: '/' },
   { label: 'Website Search', path: '/search' },
   { label: 'Contact & Dispatch Center', path: '/contact' },
