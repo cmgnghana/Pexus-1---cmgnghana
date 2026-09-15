@@ -1,0 +1,8 @@
+{
+  "name": "Pexus",
+  "description": "Premium automotive services including 24/7 towing, repairs, and auto parts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
