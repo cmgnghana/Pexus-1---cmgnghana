@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import os
+
+new_home_content = """import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, ArrowRight, Play, CheckCircle, Quote, Star, Phone, MapPin, Truck, Wrench, Battery, ShieldCheck, HelpCircle, ChevronDown, Calendar, User } from 'lucide-react';
@@ -65,13 +67,13 @@ export default function Home() {
           <div className="w-full lg:w-3/5 text-white">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/20 border border-accent/30 rounded-full text-accent text-xs font-bold uppercase tracking-wider mb-6">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              24/7 Emergency Roadside Assistance
+              Delivering Smarter Logistics Solutions
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-6">
-              Reliable Towing,<br />Haulage & Auto<br />Repairs in Ghana!
+              Moving Made Easy,<br />Wherever Life<br />Takes You!
             </h1>
             <p className="text-lg text-white/80 max-w-xl mb-8 leading-relaxed">
-              We provide 24/7 emergency towing, heavy-duty haulage, and professional auto repair services across Ghana. Your safety is our priority.
+              We handle home relocations, office moves, and specialty transport with care and efficiency making your move simple, safe, and stress-free.
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link to="/contact" className="bg-accent hover:bg-accent/90 text-white px-8 py-4 font-bold rounded-[1px] transition-all flex items-center gap-2">
@@ -98,8 +100,8 @@ export default function Home() {
                 <Truck className="w-8 h-8 text-accent" />
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-lg leading-tight mb-1">Rapid emergency<br />response.</h4>
-                <a href="/towing" className="text-accent text-sm font-bold flex items-center gap-1 hover:underline">Request Assistance <ChevronRight className="w-4 h-4" /></a>
+                <h4 className="font-bold text-slate-900 text-lg leading-tight mb-1">Global shipment<br />made easy.</h4>
+                <a href="/contact" className="text-accent text-sm font-bold flex items-center gap-1 hover:underline">Track Shipment <ChevronRight className="w-4 h-4" /></a>
               </div>
             </div>
           </div>
@@ -115,7 +117,7 @@ export default function Home() {
                 <span className="w-8 h-0.5 bg-accent" /> About Us <span className="w-8 h-0.5 bg-accent" />
               </div>
               <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-[1.2]">
-                Expert Recovery,<br />Powered by Experience.
+                Driven by Trust, Powered<br />by Experience.
               </h2>
               <p className="text-slate-600 mb-8 leading-relaxed text-lg">
                 We deliver reliable logistics solutions that connect businesses and individuals across the globe, ensuring efficiency, safety, and trust in every move.
@@ -460,7 +462,7 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full lg:w-1/2 p-12 lg:p-24 bg-[#111835]">
-            <h2 className="text-3xl font-extrabold mb-8">Request Assistance or Quote</h2>
+            <h2 className="text-3xl font-extrabold mb-8">Request Quote Form</h2>
             <form className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
@@ -494,3 +496,7 @@ export default function Home() {
     </main>
   );
 }
+"""
+
+with open('src/pages/Home.tsx', 'w') as f:
+    f.write(new_home_content)

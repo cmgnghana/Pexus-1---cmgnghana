@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Menu, X, Phone, Search as SearchIcon } from 'lucide-react';
+import { ChevronDown, Menu, X, Phone, Search as SearchIcon, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, ShoppingCart } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
@@ -44,15 +44,50 @@ export default function NavBar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
         isScrolled || location.pathname !== '/' 
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-3.5 text-dark translate-y-0" 
-          : "bg-secondary/90 backdrop-blur-md text-white py-4 translate-y-0 lg:translate-y-9 border-b border-white/10"
+          ? "bg-white/95 backdrop-blur-md shadow-sm text-dark translate-y-0" 
+          : "bg-[#111835]/95 backdrop-blur-md text-white translate-y-0 border-b border-white/10"
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      {/* Top Bar - Hidden on Mobile */}
+      <div className={cn(
+        "hidden lg:block w-full border-b transition-all duration-300 overflow-hidden",
+        isScrolled || location.pathname !== '/' ? "border-gray-100 h-0 opacity-0" : "border-white/10 h-auto opacity-100"
+      )}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center text-xs">
+          <div className="flex items-center gap-6 text-white/80">
+            <a href="tel:0597684860" className="flex items-center gap-1.5 hover:text-accent transition-colors">
+              <Phone className="w-3.5 h-3.5 text-accent" />
+              <span>0597684860</span>
+            </a>
+            <a href="mailto:official.pexus@gmail.com" className="flex items-center gap-1.5 hover:text-accent transition-colors">
+              <Mail className="w-3.5 h-3.5 text-accent" />
+              <span>official.pexus@gmail.com</span>
+            </a>
+            <div className="flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-accent" />
+              <span>Tema, Ghana</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-6 text-white/80">
+            <div className="flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5 text-accent" />
+              <span>Mon - Sat: 08:00 - 18:00</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <a href="#" className="hover:text-accent transition-colors"><Facebook className="w-3.5 h-3.5" /></a>
+              <a href="#" className="hover:text-accent transition-colors"><Twitter className="w-3.5 h-3.5" /></a>
+              <a href="#" className="hover:text-accent transition-colors"><Instagram className="w-3.5 h-3.5" /></a>
+              <a href="#" className="hover:text-accent transition-colors"><Linkedin className="w-3.5 h-3.5" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
           <img 
-            src="https://i.ibb.co/rS4MyLS/Pexus-Logo-Dark-Version.png" 
+            src={isScrolled || location.pathname !== '/' ? "https://i.ibb.co/rS4MyLS/Pexus-Logo-Dark-Version.png" : "https://i.ibb.co/jjG8ysr/Pexus-Logo-White-Version.png"} 
             alt="Pexus Logo" 
             className="h-10 md:h-11 w-auto object-contain"
             onError={(e) => {
@@ -184,10 +219,17 @@ export default function NavBar() {
         <div className="flex items-center gap-3">
           <Link 
             to="/search" 
-            className="hidden sm:flex items-center justify-center p-2.5 rounded-xl hover:bg-white/10 transition-colors text-inherit rounded-full"
+            className="hidden sm:flex items-center justify-center p-2.5 hover:opacity-70 transition-colors text-inherit rounded-full"
             aria-label="Search"
           >
             <SearchIcon className="w-5 h-5" />
+          </Link>
+          <Link 
+            to="/parts" 
+            className="hidden sm:flex items-center justify-center p-2.5 hover:opacity-70 transition-colors text-inherit rounded-full"
+            aria-label="Cart"
+          >
+            <ShoppingCart className="w-5 h-5" />
           </Link>
           <a 
             href="tel:0597684860" 
